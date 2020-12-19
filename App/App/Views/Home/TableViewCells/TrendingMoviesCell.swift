@@ -16,6 +16,16 @@ class TrendingMoviesCell: UITableViewCell {
         imgView.contentMode = .scaleAspectFill
         return imgView
     }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Title"
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        label.textColor = .white
+        label.numberOfLines  = 2
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,12 +48,16 @@ class TrendingMoviesCell: UITableViewCell {
     
     private func setupView() {
         contentView.addSubview(bgImageView)
+        contentView.backgroundColor = .red
 
         NSLayoutConstraint.activate([
             bgImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             bgImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             bgImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            bgImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            bgImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
 }

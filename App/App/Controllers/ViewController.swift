@@ -22,12 +22,33 @@ class ViewController: UIViewController {
         return tableview
     }()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupTableView()
-        fetchPopularMovies()
-        fetchTrendingMovies()
+        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+            dispatchGroup.leave()
+        })
+        
+        dispatchGroup.enter()
+        fetchPopularMovies{
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        fetchTrendingMovies{
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.popularMoviesCV.reloadData()
+            self?.tableView.reloadData()
+        }
+        
     }
     
     private func setupCollectionView() {
@@ -71,6 +92,13 @@ class ViewController: UIViewController {
         }
         return popularMovies.results[index]
     }
+    
+    private func getTrendingVideos(index: Int) -> Video? {
+        guard let trendings = trendingMovies else {
+            return nil
+        }
+        return trendings.results[index]
+    }
 }
 
 
@@ -101,6 +129,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingMoviesCell", for: indexPath) as? TrendingMoviesCell else
         { return UITableViewCell() }
+        cell.configure(video: getTrendingVideos(index: indexPath.row))
         return cell
     }
     
@@ -112,7 +141,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK:- API_Calls
 extension ViewController {
-    private func fetchPopularMovies() {
+    private func fetchPopularMovies(onCompletion: @escaping ()->Void) {
         let apiClient = APIClient()
         var params: Parameters = [:]
         params[Constants.apiKey] = "1a97f3b8d5deee1d649c0025f3acf75c"
@@ -123,14 +152,14 @@ extension ViewController {
             switch response {
             case .success(let popularMovies):
                 self?.popularMovies = popularMovies
-                self?.popularMoviesCV.reloadData()
+                onCompletion()
             case .failure(let error):
                 print(error.localizedDescription)
             }
         })
     }
     
-    private func fetchTrendingMovies() {
+    private func fetchTrendingMovies(onCompletion: @escaping ()->Void) {
         let apiClient = APIClient()
         var params: Parameters = [:]
         params[Constants.apiKey] = "1a97f3b8d5deee1d649c0025f3acf75c"
@@ -139,7 +168,7 @@ extension ViewController {
             switch response {
             case .success(let popularMovies):
                 self?.trendingMovies = popularMovies
-                self?.tableView.reloadData()
+                onCompletion()
             case .failure(let error):
                 print(error.localizedDescription)
             }
