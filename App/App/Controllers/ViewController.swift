@@ -128,8 +128,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingMoviesCell", for: indexPath) as? TrendingMoviesCell else
-        { return UITableViewCell() }
-        cell.configure(video: getTrendingVideos(index: indexPath.row))
+        {
+            return UITableViewCell()
+        }
+        //cell.configure(video: getTrendingVideos(index: indexPath.row))
         return cell
     }
     
