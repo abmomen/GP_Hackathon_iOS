@@ -27,8 +27,6 @@ class PopularMovieCell: UICollectionViewCell {
     private lazy var roundedBackgroundView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 8.0
-        view.layer.borderColor = UIColor.systemGray.cgColor
-        view.layer.borderWidth = 1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
