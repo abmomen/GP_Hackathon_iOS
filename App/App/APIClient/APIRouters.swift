@@ -25,7 +25,7 @@ enum APIRouters: APIEndpoint {
         }
     }
     
-    var parameters: Parameters? {
+    var parameters: Parameters {
         switch self {
         case .popularMovies(let params):
             return params

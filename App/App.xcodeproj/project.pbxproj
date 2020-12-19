@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17447891258DE4EB00B4F1A9 /* PopularMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744788F258DE4EB00B4F1A9 /* PopularMovieCell.swift */; };
+		17447892258DE4EB00B4F1A9 /* PopularMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17447890258DE4EB00B4F1A9 /* PopularMovieCell.xib */; };
+		17447895258DE5E400B4F1A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17447894258DE5E400B4F1A9 /* Constants.swift */; };
 		17CAFDE1258DC07800B93206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE0258DC07800B93206 /* AppDelegate.swift */; };
 		17CAFDE3258DC07800B93206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE2258DC07800B93206 /* SceneDelegate.swift */; };
 		17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE4258DC07800B93206 /* ViewController.swift */; };
@@ -24,6 +27,9 @@
 
 /* Begin PBXFileReference section */
 		09FD2AEFBE413A671EE23837 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1744788F258DE4EB00B4F1A9 /* PopularMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieCell.swift; sourceTree = "<group>"; };
+		17447890258DE4EB00B4F1A9 /* PopularMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMovieCell.xib; sourceTree = "<group>"; };
+		17447894258DE5E400B4F1A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		17CAFDDD258DC07800B93206 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CAFDE0258DC07800B93206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CAFDE2258DC07800B93206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,23 @@
 				09FD2AEFBE413A671EE23837 /* Pods_App.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1744788D258DE49100B4F1A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1744788E258DE4AF00B4F1A9 /* Collection View Cells */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1744788E258DE4AF00B4F1A9 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1744788F258DE4EB00B4F1A9 /* PopularMovieCell.swift */,
+				17447890258DE4EB00B4F1A9 /* PopularMovieCell.xib */,
+			);
+			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 		17CAFDD4258DC07800B93206 = {
@@ -125,6 +148,7 @@
 		17CAFE01258DC69000B93206 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1744788D258DE49100B4F1A9 /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +169,7 @@
 				17CAFE13258DCC5F00B93206 /* AppURL.swift */,
 				17CAFE16258DD1E300B93206 /* APIRouters.swift */,
 				17CAFE19258DD34F00B93206 /* APIClient.swift */,
+				17447894258DE5E400B4F1A9 /* Constants.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -218,6 +243,7 @@
 			files = (
 				17CAFDED258DC07900B93206 /* LaunchScreen.storyboard in Resources */,
 				17CAFDEA258DC07900B93206 /* Assets.xcassets in Resources */,
+				17447892258DE4EB00B4F1A9 /* PopularMovieCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +302,12 @@
 				17CAFE11258DCBAA00B93206 /* StringExtenstion.swift in Sources */,
 				17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */,
 				17CAFE14258DCC5F00B93206 /* AppURL.swift in Sources */,
+				17447891258DE4EB00B4F1A9 /* PopularMovieCell.swift in Sources */,
 				17CAFDE1258DC07800B93206 /* AppDelegate.swift in Sources */,
 				17CAFE0C258DCA5A00B93206 /* APIEndPoints.swift in Sources */,
 				17CAFDE3258DC07800B93206 /* SceneDelegate.swift in Sources */,
 				17CAFE1A258DD34F00B93206 /* APIClient.swift in Sources */,
+				17447895258DE5E400B4F1A9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
