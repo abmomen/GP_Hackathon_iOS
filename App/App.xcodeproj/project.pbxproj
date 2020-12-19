@@ -10,7 +10,6 @@
 		17CAFDE1258DC07800B93206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE0258DC07800B93206 /* AppDelegate.swift */; };
 		17CAFDE3258DC07800B93206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE2258DC07800B93206 /* SceneDelegate.swift */; };
 		17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE4258DC07800B93206 /* ViewController.swift */; };
-		17CAFDE8258DC07800B93206 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CAFDE6258DC07800B93206 /* Main.storyboard */; };
 		17CAFDEA258DC07900B93206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CAFDE9258DC07900B93206 /* Assets.xcassets */; };
 		17CAFDED258DC07900B93206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CAFDEB258DC07900B93206 /* LaunchScreen.storyboard */; };
 		17CAFDFC258DC66000B93206 /* PopularMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDFB258DC66000B93206 /* PopularMovies.swift */; };
@@ -29,7 +28,6 @@
 		17CAFDE0258DC07800B93206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CAFDE2258DC07800B93206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		17CAFDE4258DC07800B93206 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		17CAFDE7258DC07800B93206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17CAFDE9258DC07900B93206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17CAFDEC258DC07900B93206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17CAFDEE258DC07900B93206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,13 +92,12 @@
 		17CAFDDF258DC07800B93206 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				17CAFE0F258DCB8E00B93206 /* Extenstions */,
-				17CAFE0A258DCA4100B93206 /* APIClient */,
-				17CAFE02258DC6C800B93206 /* Shared */,
 				17CAFDFA258DC64100B93206 /* Models */,
 				17CAFE01258DC69000B93206 /* Views */,
 				17CAFDFF258DC67000B93206 /* Controllers */,
-				17CAFE00258DC67D00B93206 /* Services */,
+				17CAFE02258DC6C800B93206 /* Shared */,
+				17CAFE0F258DCB8E00B93206 /* Extenstions */,
+				17CAFE0A258DCA4100B93206 /* APIClient */,
 				17CAFDE9258DC07900B93206 /* Assets.xcassets */,
 				17CAFDEB258DC07900B93206 /* LaunchScreen.storyboard */,
 				17CAFDEE258DC07900B93206 /* Info.plist */,
@@ -125,17 +122,9 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		17CAFE00258DC67D00B93206 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		17CAFE01258DC69000B93206 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				17CAFDE6258DC07800B93206 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,7 +218,6 @@
 			files = (
 				17CAFDED258DC07900B93206 /* LaunchScreen.storyboard in Resources */,
 				17CAFDEA258DC07900B93206 /* Assets.xcassets in Resources */,
-				17CAFDE8258DC07800B93206 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,14 +286,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		17CAFDE6258DC07800B93206 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17CAFDE7258DC07800B93206 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		17CAFDEB258DC07900B93206 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
