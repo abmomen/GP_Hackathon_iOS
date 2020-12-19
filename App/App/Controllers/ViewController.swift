@@ -6,9 +6,19 @@ class ViewController: UIViewController {
     private var popularMovies: PopularMovies?
     private var trendingMovies: TrendingVideos?
     
+    private lazy var trendingsTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Trendings Videos"
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        label.textColor = .black
+        label.numberOfLines  = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private lazy var popularTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Popular Movies"
+        label.text = "Popular Videos"
         label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         label.textColor = .black
         label.numberOfLines  = 1
@@ -63,8 +73,8 @@ class ViewController: UIViewController {
     
     private func setupCollectionView() {
         view.backgroundColor = .white
-        view.addSubview(popularMoviesCV)
         view.addSubview(popularTitleLabel)
+        view.addSubview(popularMoviesCV)
         
         popularMoviesCV.collectionViewLayout = {
             let flowLayout = UICollectionViewFlowLayout()
@@ -78,9 +88,10 @@ class ViewController: UIViewController {
         popularMoviesCV.dataSource = self
         popularMoviesCV.register(PopularMovieCell.self, forCellWithReuseIdentifier: "PopularMovieCell")
         
-        popularTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        popularTitleLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        popularTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        popularTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
+        popularTitleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        popularTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8).isActive = true
+        popularTitleLabel.heightAnchor.constraint(equalToConstant: 28.0).isActive = true
         
         popularMoviesCV.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         popularMoviesCV.topAnchor.constraint(equalTo: popularTitleLabel.bottomAnchor).isActive = true
@@ -89,14 +100,21 @@ class ViewController: UIViewController {
     }
     
     private func setupTableView() {
+        view.addSubview(trendingsTitleLabel)
         view.addSubview(tableView)
-        
         tableView.register(TrendingMoviesCell.self, forCellReuseIdentifier: "TrendingMoviesCell")
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        trendingsTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
+        trendingsTitleLabel.topAnchor.constraint(equalTo: popularMoviesCV.bottomAnchor).isActive = true
+        trendingsTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
+        trendingsTitleLabel.heightAnchor.constraint(equalToConstant: 28.0).isActive = true
+        
+        
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: popularMoviesCV.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: trendingsTitleLabel.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
