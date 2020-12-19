@@ -26,6 +26,16 @@ class TrendingMoviesCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configure(video: Video?) {
+        let baseUrl = "https://image.tmdb.org/t/p/w342"
+        if let vid = video {
+            let url = URL(string: baseUrl + (vid.posterPath))
+            let placeholder = UIImage(named: "placeholder")
+            bgImageView.kf.indicatorType = .activity
+            bgImageView.kf.setImage(with: url, placeholder: placeholder)
+        }
+    }
+    
     private func setupView() {
         contentView.addSubview(bgImageView)
 

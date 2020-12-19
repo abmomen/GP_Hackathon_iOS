@@ -80,7 +80,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularMovieCell", for: indexPath) as? PopularMovieCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularMovieCell", for: indexPath) as? PopularMovieCell else
+        { return UICollectionViewCell() }
         
         cell.configure(movie: getPopularMovie(index: indexPath.row))
         return cell
@@ -98,7 +99,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingMoviesCell", for: indexPath) as? TrendingMoviesCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingMoviesCell", for: indexPath) as? TrendingMoviesCell else
+        { return UITableViewCell() }
         return cell
     }
     
