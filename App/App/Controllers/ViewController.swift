@@ -6,9 +6,9 @@ class ViewController: UIViewController {
     private var popularMovies: PopularMovies?
     private var trendingMovies: TrendingVideos?
     
-    private lazy var trendingsTitleLabel: UILabel = {
+    private lazy var popularTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Trendings Videos"
+        label.text = "Popular Movies"
         label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         label.textColor = .black
         label.numberOfLines  = 1
@@ -16,9 +16,9 @@ class ViewController: UIViewController {
         return label
     }()
     
-    private lazy var popularTitleLabel: UILabel = {
+    private lazy var trendingsTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Popular Videos"
+        label.text = "Trendings Contents"
         label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         label.textColor = .black
         label.numberOfLines  = 1
