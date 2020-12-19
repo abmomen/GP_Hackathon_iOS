@@ -30,16 +30,6 @@ class PopularMovieCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Title"
-        label.font = UIFont.systemFont(ofSize: 12.0, weight: .medium)
-        label.textColor = .white
-        label.numberOfLines  = 2
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private lazy var bgImageView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "placeholder")
@@ -50,9 +40,7 @@ class PopularMovieCell: UICollectionViewCell {
     
     func configure(movie: Movies?) {
         let baseUrl = "https://image.tmdb.org/t/p/w342"
-        if let mov = movie {
-            titleLabel.text = mov.title
-           
+        if let mov = movie {           
             let url = URL(string: baseUrl + (mov.posterPath))
             let placeholder = UIImage(named: "placeholder")
             bgImageView.kf.indicatorType = .activity

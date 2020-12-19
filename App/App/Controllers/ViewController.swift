@@ -6,6 +6,16 @@ class ViewController: UIViewController {
     private var popularMovies: PopularMovies?
     private var trendingMovies: TrendingVideos?
     
+    private lazy var popularTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Popular Movies"
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        label.textColor = .black
+        label.numberOfLines  = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     //CV stands for collection view
     private lazy var popularMoviesCV: UICollectionView = {
         let layout = UICollectionViewFlowLayout.init()
@@ -54,20 +64,26 @@ class ViewController: UIViewController {
     private func setupCollectionView() {
         view.backgroundColor = .white
         view.addSubview(popularMoviesCV)
+        view.addSubview(popularTitleLabel)
         
         popularMoviesCV.collectionViewLayout = {
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             flowLayout.minimumInteritemSpacing = 0
-            flowLayout.minimumLineSpacing = 5
+            flowLayout.minimumLineSpacing = 2
             return flowLayout
         }()
         
         popularMoviesCV.delegate = self
         popularMoviesCV.dataSource = self
         popularMoviesCV.register(PopularMovieCell.self, forCellWithReuseIdentifier: "PopularMovieCell")
+        
+        popularTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        popularTitleLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        popularTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
         popularMoviesCV.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        popularMoviesCV.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        popularMoviesCV.topAnchor.constraint(equalTo: popularTitleLabel.bottomAnchor).isActive = true
         popularMoviesCV.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         popularMoviesCV.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.25).isActive = true
     }
