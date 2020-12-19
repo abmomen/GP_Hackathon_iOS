@@ -131,7 +131,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         {
             return UITableViewCell()
         }
-        //cell.configure(video: getTrendingVideos(index: indexPath.row))
+        cell.configure(video: getTrendingVideos(index: indexPath.row))
         return cell
     }
     

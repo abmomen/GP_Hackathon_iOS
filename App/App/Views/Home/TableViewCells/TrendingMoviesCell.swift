@@ -34,5 +34,15 @@ class TrendingMoviesCell:  UITableViewCell {
         imgView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
+    
+    func configure(video: Video?) {
+        let baseUrl = "https://image.tmdb.org/t/p/w342"
+        if let vid = video {
+            let url = URL(string: baseUrl + (vid.posterPath))
+            let placeholder = UIImage(named: "placeholder")
+            imgView.kf.indicatorType = .activity
+            imgView.kf.setImage(with: url, placeholder: placeholder)
+        }
+    }
 
 }
