@@ -4,6 +4,7 @@ import Alamofire
 class ViewController: UIViewController {
     
     private var popularMovies: PopularMovies?
+    private var trendingMovies: TrendingVideos?
     
     //CV stands for collection view
     private lazy var popularMoviesCV: UICollectionView = {
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableview = UITableView()
+        tableview.separatorStyle = .none
         tableview.translatesAutoresizingMaskIntoConstraints = false
         return tableview
     }()
@@ -23,7 +25,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupTableView()
         fetchPopularMovies()
+        fetchTrendingMovies()
     }
     
     private func setupCollectionView() {
@@ -49,6 +53,8 @@ class ViewController: UIViewController {
     
     private func setupTableView() {
         view.addSubview(tableView)
+        
+        tableView.register(TrendingMoviesCell.self, forCellReuseIdentifier: "TrendingMoviesCell")
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -88,11 +94,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return trendingMovies?.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingMoviesCell", for: indexPath) as? TrendingMoviesCell else { return UITableViewCell() }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400.0
     }
 }
 
@@ -111,6 +122,22 @@ extension ViewController {
             case .success(let popularMovies):
                 self?.popularMovies = popularMovies
                 self?.popularMoviesCV.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
+    }
+    
+    private func fetchTrendingMovies() {
+        let apiClient = APIClient()
+        var params: Parameters = [:]
+        params[Constants.apiKey] = "1a97f3b8d5deee1d649c0025f3acf75c"
+        
+        apiClient.getTrendingVideos(params: params, completion: {[weak self] (response) in
+            switch response {
+            case .success(let popularMovies):
+                self?.trendingMovies = popularMovies
+                self?.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }

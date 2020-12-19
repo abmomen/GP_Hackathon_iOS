@@ -32,7 +32,7 @@ struct Video: Codable {
     let title: String?
     let genreIDS: [Int]
     let id: Int
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String?
     let originalTitle: String?
     let posterPath: String
     let popularity: Double

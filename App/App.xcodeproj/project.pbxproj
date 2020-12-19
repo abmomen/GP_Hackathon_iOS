@@ -10,6 +10,7 @@
 		17447891258DE4EB00B4F1A9 /* PopularMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744788F258DE4EB00B4F1A9 /* PopularMovieCell.swift */; };
 		17447895258DE5E400B4F1A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17447894258DE5E400B4F1A9 /* Constants.swift */; };
 		174478A6258E13B000B4F1A9 /* TrendingVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174478A5258E13B000B4F1A9 /* TrendingVideos.swift */; };
+		174478AA258E213600B4F1A9 /* TrendingMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174478A9258E213600B4F1A9 /* TrendingMoviesCell.swift */; };
 		17CAFDE1258DC07800B93206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE0258DC07800B93206 /* AppDelegate.swift */; };
 		17CAFDE3258DC07800B93206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE2258DC07800B93206 /* SceneDelegate.swift */; };
 		17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE4258DC07800B93206 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		1744788F258DE4EB00B4F1A9 /* PopularMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieCell.swift; sourceTree = "<group>"; };
 		17447894258DE5E400B4F1A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		174478A5258E13B000B4F1A9 /* TrendingVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingVideos.swift; sourceTree = "<group>"; };
+		174478A9258E213600B4F1A9 /* TrendingMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesCell.swift; sourceTree = "<group>"; };
 		17CAFDDD258DC07800B93206 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CAFDE0258DC07800B93206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CAFDE2258DC07800B93206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,17 +82,26 @@
 		1744788D258DE49100B4F1A9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1744788E258DE4AF00B4F1A9 /* Collection View Cells */,
+				174478A8258E20EB00B4F1A9 /* TableViewCells */,
+				1744788E258DE4AF00B4F1A9 /* CollectionViewCells */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		1744788E258DE4AF00B4F1A9 /* Collection View Cells */ = {
+		1744788E258DE4AF00B4F1A9 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				1744788F258DE4EB00B4F1A9 /* PopularMovieCell.swift */,
 			);
-			path = "Collection View Cells";
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		174478A8258E20EB00B4F1A9 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				174478A9258E213600B4F1A9 /* TrendingMoviesCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		17CAFDD4258DC07800B93206 = {
@@ -300,6 +311,7 @@
 				174478A6258E13B000B4F1A9 /* TrendingVideos.swift in Sources */,
 				17CAFE1E258DD4E900B93206 /* PopularTVSeries.swift in Sources */,
 				17CAFE11258DCBAA00B93206 /* StringExtenstion.swift in Sources */,
+				174478AA258E213600B4F1A9 /* TrendingMoviesCell.swift in Sources */,
 				17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */,
 				17CAFE14258DCC5F00B93206 /* AppURL.swift in Sources */,
 				17447891258DE4EB00B4F1A9 /* PopularMovieCell.swift in Sources */,
