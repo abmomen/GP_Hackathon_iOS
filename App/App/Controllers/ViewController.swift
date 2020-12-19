@@ -25,8 +25,7 @@ class ViewController: UIViewController {
         popularMoviesCV.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         popularMoviesCV.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         popularMoviesCV.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        popularMoviesCV.heightAnchor.constraint(equalToConstant: 150.0).isActive = true
+        popularMoviesCV.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.25).isActive = true
     }
-    
 }
 
