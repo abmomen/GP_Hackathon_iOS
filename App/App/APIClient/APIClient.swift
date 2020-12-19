@@ -1,9 +1,3 @@
-//
-//  APIClient.swift
-//  App
-//
-//  Created by Sharetrip-iOS on 19/12/2020.
-//
 
 import Foundation
 import Alamofire
@@ -19,7 +13,11 @@ class APIClient {
 }
 
 extension APIClient {
-    func getPopularMovies(completion: @escaping (AFResult<PopularMovies>) -> Void) {
-        APIClient.performRequest(route: APIRouters.popularMovies, completion: completion)
+    func getPopularMovies(params: Parameters, completion: @escaping (AFResult<PopularMovies>) -> Void) {
+        APIClient.performRequest(route: APIRouters.popularMovies(params: params), completion: completion)
+    }
+    
+    func getPopularTVSeries(params: Parameters, completion: @escaping (AFResult<PopularTVSeries>) -> Void) {
+        APIClient.performRequest(route: APIRouters.popularTVSeries(params: params), completion: completion)
     }
 }

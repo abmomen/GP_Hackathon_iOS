@@ -19,6 +19,7 @@
 		17CAFE14258DCC5F00B93206 /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFE13258DCC5F00B93206 /* AppURL.swift */; };
 		17CAFE17258DD1E300B93206 /* APIRouters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFE16258DD1E300B93206 /* APIRouters.swift */; };
 		17CAFE1A258DD34F00B93206 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFE19258DD34F00B93206 /* APIClient.swift */; };
+		17CAFE1E258DD4E900B93206 /* PopularTVSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFE1D258DD4E900B93206 /* PopularTVSeries.swift */; };
 		DA9EF57DF90B5F238F6BE84C /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FD2AEFBE413A671EE23837 /* Pods_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		17CAFE13258DCC5F00B93206 /* AppURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURL.swift; sourceTree = "<group>"; };
 		17CAFE16258DD1E300B93206 /* APIRouters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouters.swift; sourceTree = "<group>"; };
 		17CAFE19258DD34F00B93206 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		17CAFE1D258DD4E900B93206 /* PopularTVSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVSeries.swift; sourceTree = "<group>"; };
 		6C04CAE5B985D674C18C12B4 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		ED4E6DABA783A7F1CEBADE91 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				17CAFDFB258DC66000B93206 /* PopularMovies.swift */,
+				17CAFE1D258DD4E900B93206 /* PopularTVSeries.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			files = (
 				17CAFDFC258DC66000B93206 /* PopularMovies.swift in Sources */,
 				17CAFE17258DD1E300B93206 /* APIRouters.swift in Sources */,
+				17CAFE1E258DD4E900B93206 /* PopularTVSeries.swift in Sources */,
 				17CAFE11258DCBAA00B93206 /* StringExtenstion.swift in Sources */,
 				17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */,
 				17CAFE14258DCC5F00B93206 /* AppURL.swift in Sources */,

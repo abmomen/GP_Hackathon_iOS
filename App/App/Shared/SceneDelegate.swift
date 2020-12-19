@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  App
-//
-//  Created by Sharetrip-iOS on 19/12/2020.
-//
 
 import UIKit
 

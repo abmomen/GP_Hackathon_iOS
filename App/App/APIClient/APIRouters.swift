@@ -1,40 +1,46 @@
-//
-//  APIRouters.swift
-//  App
-//
-//  Created by Sharetrip-iOS on 19/12/2020.
-//
 
 import Foundation
 
 import Alamofire
 
 enum APIRouters: APIEndpoint {
-    case popularMovies
-
+    case popularMovies(params: Parameters)
+    case popularTVSeries(params: Parameters)
+    
+    var baseUrl: String { return "https://api.themoviedb.org/3/" }
+    
     var path: String {
         switch self {
-            case .popularMovies:
-                return "discover/movie"
+        case .popularMovies:
+            return "discover/movie"
+        case .popularTVSeries:
+            return "discover/tv"
         }
     }
-
+    
     var method: HTTPMethod {
         switch self {
-        case .popularMovies:
+        case .popularMovies, .popularTVSeries:
             return .get
         }
     }
-
-    var baseUrl: String { return "https://sharetrip-96054.firebaseio.com/" }
-
+    
+    var parameters: Parameters? {
+        switch self {
+        case .popularMovies(let params):
+            return params
+        case .popularTVSeries(let params):
+            return params
+        }
+    }
+    
     func asURLRequest() throws -> URLRequest {
         let url = URL(string: baseUrl + path)!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
         return urlRequest
     }
-
+    
     func asURL() throws -> URL {
         return URL(string: baseUrl + path)!
     }
