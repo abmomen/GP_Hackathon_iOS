@@ -24,9 +24,8 @@ class PopularMovieCell: UICollectionViewCell {
     }
     
     // MARK: - Properties
-    private lazy var roundedBackgroundView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 8.0
+    private lazy var containerView: UIView = {
+        let view = UIView()    
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -66,22 +65,23 @@ class PopularMovieCell: UICollectionViewCell {
 // MARK: - UI Setup
 extension PopularMovieCell {
     private func setupUI() {
-        self.contentView.addSubview(roundedBackgroundView)
-        roundedBackgroundView.addSubview(bgImageView)
-        roundedBackgroundView.addSubview(titleLabel)
+        self.contentView.addSubview(containerView)
+        containerView.layer.cornerRadius = 8.0
+        bgImageView.layer.cornerRadius = 8.0
+        bgImageView.clipsToBounds = true
+        
+        containerView.clipsToBounds = true
+        containerView.addSubview(bgImageView)
         
         NSLayoutConstraint.activate([
-            roundedBackgroundView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5),
-            roundedBackgroundView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5),
-            roundedBackgroundView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 5),
-            roundedBackgroundView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -5),
-            bgImageView.leadingAnchor.constraint(equalTo: roundedBackgroundView.leadingAnchor, constant: 5),
-            bgImageView.topAnchor.constraint(equalTo: roundedBackgroundView.topAnchor, constant: 5),
-            bgImageView.trailingAnchor.constraint(equalTo: roundedBackgroundView.trailingAnchor, constant: -5),
-            bgImageView.bottomAnchor.constraint(equalTo: roundedBackgroundView.bottomAnchor, constant: -5),
-            titleLabel.topAnchor.constraint(equalTo: roundedBackgroundView.topAnchor, constant: 5),
-            titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -2),
+            containerView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            containerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 5),
+            containerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            bgImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 5),
+            bgImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5),
+            bgImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5),
+            bgImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -5),
         ])
         
     }
