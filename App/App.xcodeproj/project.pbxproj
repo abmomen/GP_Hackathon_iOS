@@ -11,6 +11,7 @@
 		17447895258DE5E400B4F1A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17447894258DE5E400B4F1A9 /* Constants.swift */; };
 		174478A6258E13B000B4F1A9 /* TrendingVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174478A5258E13B000B4F1A9 /* TrendingVideos.swift */; };
 		174478AF258E2DDD00B4F1A9 /* TrendingMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174478AD258E2DDD00B4F1A9 /* TrendingMoviesCell.swift */; };
+		174478BE258E415100B4F1A9 /* TVSeriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174478BD258E415100B4F1A9 /* TVSeriesCell.swift */; };
 		17CAFDE1258DC07800B93206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE0258DC07800B93206 /* AppDelegate.swift */; };
 		17CAFDE3258DC07800B93206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE2258DC07800B93206 /* SceneDelegate.swift */; };
 		17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDE4258DC07800B93206 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		17447894258DE5E400B4F1A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		174478A5258E13B000B4F1A9 /* TrendingVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingVideos.swift; sourceTree = "<group>"; };
 		174478AD258E2DDD00B4F1A9 /* TrendingMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesCell.swift; sourceTree = "<group>"; };
+		174478BD258E415100B4F1A9 /* TVSeriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesCell.swift; sourceTree = "<group>"; };
 		17CAFDDD258DC07800B93206 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CAFDE0258DC07800B93206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CAFDE2258DC07800B93206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				174478AD258E2DDD00B4F1A9 /* TrendingMoviesCell.swift */,
+				174478BD258E415100B4F1A9 /* TVSeriesCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				174478AF258E2DDD00B4F1A9 /* TrendingMoviesCell.swift in Sources */,
 				17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */,
 				17CAFE14258DCC5F00B93206 /* AppURL.swift in Sources */,
+				174478BE258E415100B4F1A9 /* TVSeriesCell.swift in Sources */,
 				17447891258DE4EB00B4F1A9 /* PopularMovieCell.swift in Sources */,
 				17CAFDE1258DC07800B93206 /* AppDelegate.swift in Sources */,
 				17CAFE0C258DCA5A00B93206 /* APIEndPoints.swift in Sources */,
