@@ -13,6 +13,7 @@ protocol APIEndpoint: URLRequestConvertible, URLConvertible {
     func asURL() throws -> URL
 }
 
+//Default implementation
 extension APIEndpoint {
     var contentType: ContentType? { .json }
     var bodyData: Data? { nil }
