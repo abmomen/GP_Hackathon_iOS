@@ -9,20 +9,27 @@ import UIKit
 import Kingfisher
 
 class PopularMovieCell: UICollectionViewCell {
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var bgImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
+    private lazy var bgImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
+        backgroundColor = .red
     }
     
     private func setupView() {
-        containerView.layer.cornerRadius = 8.0
-        containerView.backgroundColor = .white
+        addSubview(bgImageView)
+        bgImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        bgImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        bgImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        bgImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        bgImageView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        bgImageView.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
     }
     
     func configure(movie: Movies?) {
@@ -31,7 +38,5 @@ class PopularMovieCell: UICollectionViewCell {
         let placeholder = UIImage(named: "placeholder")
         bgImageView.kf.indicatorType = .activity
         bgImageView.kf.setImage(with: url, placeholder: placeholder)
-        
-        titleLabel.text = "movie title"
     }
 }

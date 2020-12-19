@@ -10,20 +10,32 @@ class ViewController: UIViewController {
         let layout = UICollectionViewFlowLayout.init()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor =  .red
         return collectionView
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableview = UITableView()
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        return tableview
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        setupCollectionView()
         fetchPopularMovies()
     }
     
-    private func setupView() {
+    private func setupCollectionView() {
         view.backgroundColor = .white
         view.addSubview(popularMoviesCV)
         
+        popularMoviesCV.collectionViewLayout = {
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.scrollDirection = .horizontal
+            flowLayout.minimumInteritemSpacing = 0
+            flowLayout.minimumLineSpacing = 5
+            return flowLayout
+        }()
         
         popularMoviesCV.delegate = self
         popularMoviesCV.dataSource = self
@@ -32,6 +44,18 @@ class ViewController: UIViewController {
         popularMoviesCV.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         popularMoviesCV.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         popularMoviesCV.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.25).isActive = true
+    }
+    
+    private func setupTableView() {
+        view.addSubview(tableView)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: popularMoviesCV.bottomAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
     }
     
     private func getPopularMovie(index: Int) -> Movies? {
@@ -43,7 +67,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         popularMovies?.results.count ?? 0
     }
@@ -53,6 +77,21 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.configure(movie: getPopularMovie(index: indexPath.row))
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
 
