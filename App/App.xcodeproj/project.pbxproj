@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		17CAFDE8258DC07800B93206 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CAFDE6258DC07800B93206 /* Main.storyboard */; };
 		17CAFDEA258DC07900B93206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CAFDE9258DC07900B93206 /* Assets.xcassets */; };
 		17CAFDED258DC07900B93206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CAFDEB258DC07900B93206 /* LaunchScreen.storyboard */; };
+		17CAFDFC258DC66000B93206 /* PopularMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CAFDFB258DC66000B93206 /* PopularMovies.swift */; };
 		DA9EF57DF90B5F238F6BE84C /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FD2AEFBE413A671EE23837 /* Pods_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		17CAFDE9258DC07900B93206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17CAFDEC258DC07900B93206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17CAFDEE258DC07900B93206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17CAFDFB258DC66000B93206 /* PopularMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovies.swift; sourceTree = "<group>"; };
 		6C04CAE5B985D674C18C12B4 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		ED4E6DABA783A7F1CEBADE91 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +50,6 @@
 				6C04CAE5B985D674C18C12B4 /* Pods-App.debug.xcconfig */,
 				ED4E6DABA783A7F1CEBADE91 /* Pods-App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +82,56 @@
 		17CAFDDF258DC07800B93206 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				17CAFDE0258DC07800B93206 /* AppDelegate.swift */,
-				17CAFDE2258DC07800B93206 /* SceneDelegate.swift */,
-				17CAFDE4258DC07800B93206 /* ViewController.swift */,
-				17CAFDE6258DC07800B93206 /* Main.storyboard */,
+				17CAFE02258DC6C800B93206 /* Main */,
+				17CAFE01258DC69000B93206 /* Views */,
+				17CAFE00258DC67D00B93206 /* Services */,
+				17CAFDFF258DC67000B93206 /* Controllers */,
+				17CAFDFA258DC64100B93206 /* Models */,
 				17CAFDE9258DC07900B93206 /* Assets.xcassets */,
 				17CAFDEB258DC07900B93206 /* LaunchScreen.storyboard */,
 				17CAFDEE258DC07900B93206 /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		17CAFDFA258DC64100B93206 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17CAFDFB258DC66000B93206 /* PopularMovies.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		17CAFDFF258DC67000B93206 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				17CAFDE4258DC07800B93206 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		17CAFE00258DC67D00B93206 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		17CAFE01258DC69000B93206 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				17CAFDE6258DC07800B93206 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		17CAFE02258DC6C800B93206 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				17CAFDE0258DC07800B93206 /* AppDelegate.swift */,
+				17CAFDE2258DC07800B93206 /* SceneDelegate.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CAFDFC258DC66000B93206 /* PopularMovies.swift in Sources */,
 				17CAFDE5258DC07800B93206 /* ViewController.swift in Sources */,
 				17CAFDE1258DC07800B93206 /* AppDelegate.swift in Sources */,
 				17CAFDE3258DC07800B93206 /* SceneDelegate.swift in Sources */,
