@@ -44,4 +44,8 @@ extension APIClient {
     func getPopularTVSeries(params: Parameters, completion: @escaping (AFResult<PopularTVSeries>) -> Void) {
         APIClient.performRequest(route: APIRouters.popularTVSeries(params: params), completion: completion)
     }
+    
+    func getTrendingVideos(params: Parameters, completion: @escaping (AFResult<TrendingVideos>) -> Void) {
+        APIClient.performRequest(route: APIRouters.trendingVideos(param: params), completion: completion)
+    }
 }
