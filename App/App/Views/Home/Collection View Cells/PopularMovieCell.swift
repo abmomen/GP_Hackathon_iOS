@@ -22,10 +22,16 @@ class PopularMovieCell: UICollectionViewCell {
     
     private func setupView() {
         containerView.layer.cornerRadius = 8.0
+        containerView.backgroundColor = .white
     }
     
-    func configure(imageUrl: String) {
+    func configure(movie: Movies?) {
+        let baseUrl = "https://image.tmdb.org/t/p/w342"
+        let url = URL(string: baseUrl + (movie?.posterPath ?? ""))
+        let placeholder = UIImage(named: "placeholder")
+        bgImageView.kf.indicatorType = .activity
+        bgImageView.kf.setImage(with: url, placeholder: placeholder)
         
+        titleLabel.text = "movie title"
     }
-
 }
