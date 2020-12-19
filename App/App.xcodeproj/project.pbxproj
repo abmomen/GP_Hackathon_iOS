@@ -165,8 +165,8 @@
 		17CAFE0A258DCA4100B93206 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				17CAFE0B258DCA5A00B93206 /* APIEndPoints.swift */,
 				17CAFE13258DCC5F00B93206 /* AppURL.swift */,
+				17CAFE0B258DCA5A00B93206 /* APIEndPoints.swift */,
 				17CAFE16258DD1E300B93206 /* APIRouters.swift */,
 				17CAFE19258DD34F00B93206 /* APIClient.swift */,
 				17447894258DE5E400B4F1A9 /* Constants.swift */,

@@ -3,9 +3,9 @@ import Foundation
 
 // MARK: - PopularMovies
 struct PopularMovies: Codable {
-    let page: Int?
-    let results: [Movies]?
-    let totalPages, totalResults: Int?
+    let page: Int
+    let results: [Movies]
+    let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
         case page, results
@@ -16,16 +16,16 @@ struct PopularMovies: Codable {
 
 // MARK: - Result
 struct Movies: Codable {
-    let adult: Bool?
+    let adult: Bool
     let backdropPath: String?
-    let genreIDS: [Int]?
+    let genreIDS: [Int]
     let id: Int?
-    let originalLanguage: OriginalLanguage?
-    let originalTitle, overview: String?
-    let popularity: Double?
-    let posterPath, releaseDate, title: String?
-    let video: Bool?
-    let voteAverage, voteCount: Int?
+    let originalLanguage: OriginalLanguage
+    let originalTitle, overview: String
+    let popularity: Double
+    let posterPath, releaseDate, title: String
+    let video: Bool
+    let voteAverage, voteCount: Int
 
     enum CodingKeys: String, CodingKey {
         case adult

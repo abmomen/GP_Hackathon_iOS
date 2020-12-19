@@ -18,9 +18,6 @@ extension APIEndpoint {
     var contentType: ContentType? { .json }
 
     /// Default implementaion
-    var parameters: Parameters? { nil }
-
-    /// Default implementaion
     var bodyData: Data? { nil }
 }
 
@@ -75,7 +72,6 @@ extension APIEndpoint  {
         if let parameters = parameters {
             do {
                 if method == .get {
-
                     if let items = paramsToQueryItems(parameters) {
                         urlComponents.queryItems = items
                     }
